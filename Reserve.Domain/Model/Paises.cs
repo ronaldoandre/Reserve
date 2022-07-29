@@ -1,13 +1,14 @@
 namespace Reserve.Domain.Models;
 public class Paises
 {
-    public int Id { get; set; }
+    public Guid ID { get; set; }
     public string Country { get; set; }
     public string CountryCode { get; set; }
-    public string Confirmed { get; set; }
-    public string Deaths { get; set; }
-    public string Recovered { get; set; }
-    public string Active { get; set; }
+    public string Slug { get; set; }
+    public int TotalConfirmed { get; set; }
+    public int NewDeaths { get; set; }
+    public int TotalDeaths { get; set; }
+    public int NewRecovered { get; set; }
+    public int TotalRecovered { get; set; }
     public DateTime Date { get; set; }
-    public string LocationId { get; set; }
 }

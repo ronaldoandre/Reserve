@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using Reserve.Domain.Interfaces;
 using Reserve.Domain.Models;
 
@@ -20,9 +21,9 @@ public class Repository : IRepository
         if (response.IsSuccessStatusCode)
         {
             string responseBodyAsText = await response.Content.ReadAsStringAsync();
-            Consulta result = new Consulta();
-            result.Countries = responseBodyAsText;
-            return  result;
+            Consulta result = JsonConvert.DeserializeObject<Consulta>(responseBodyAsText);
+
+            return result;
 
         }
         return null;
