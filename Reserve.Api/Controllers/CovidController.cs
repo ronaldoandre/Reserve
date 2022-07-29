@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Reserve.Domain.Interfaces;
 using Reserve.Domain.Models;
+using Reserve.Domain.ViewModels;
 
 namespace Reserve.Api.Controller;
 
@@ -15,7 +16,7 @@ public class CovidController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<Consulta>> Get()
+    public async Task<ActionResult<List<Top10ViewModel>>> Get()
     {
         return  await _service.Get();
 
